@@ -23,3 +23,5 @@ Formatting strings pulled from the scrape into usable data elements was also nec
 In all, I found the project exercise to be deeply rewarding in my coding studies.  I needed to do 2 major refactorings of the program after the game was operable - once to remove unnecessary hashes, and the other to consolidate and optimize the class file structures - but even through those refactorings I enjoyed the experience of getting more intimate with the methods and how they collaborated the objects across classes.
 
 Completing the CLI Data Gem project confirmed for me that I truly enjoy coding.  It is something that I am now looking forward to being really, really, really good at.
+
+ You can access Game Of Thrones here: https://github.com/jgrantps/gameofthrones
