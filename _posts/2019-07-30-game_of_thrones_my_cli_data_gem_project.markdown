@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Game of Thrones: My CLI Data Gem Project"
-date:       2019-07-30 14:02:29 +0000
+date:       2019-07-30 10:02:30 -0400
 permalink:  game_of_thrones_my_cli_data_gem_project
 ---
 
