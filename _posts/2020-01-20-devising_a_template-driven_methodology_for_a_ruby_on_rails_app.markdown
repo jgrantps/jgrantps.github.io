@@ -166,8 +166,5 @@ Although this framework was not directly implemented in the user story conundrum
 The process of working through building off of a conventional Rails framework, and then finding ways to manipulate the framework to solve unforeseen complications in the app, was very rewarding.  Combining both Rails helpers and conventional ruby code in the framework helped to consolidate my understanding of both Ruby and Ruby on Rails.  I recommend considering this design approach to any student wishing to push themselves in their Ruby/Rails learning journey.
 
 
-
-
-
  *A very real lesson I learned from attempting to build a data-rich dashboard app is how much the initial design blueprint matters.  Mapping out your nested routes—and fully understanding those routes implied data requirements—before starting to code the program is crucial.  You can get lost, as I did many times in the process of building this app, in myriad rabbit holes where you’re trying to shoehorn inappropriate data into inappropriate routes. 
 *
