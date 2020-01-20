@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Devising a Template-Driven Methodology for a Ruby On Rails App."
-date:       2020-01-20 14:55:00 +0000
+date:       2020-01-20 09:55:01 -0500
 permalink:  devising_a_template-driven_methodology_for_a_ruby_on_rails_app
 ---
 
@@ -44,7 +44,7 @@ which would then drill into a connected associate's profile.  But there's a prob
 
 If our consistent dashboard UX/UI is to hold for this route, then this route ought to act as a sort of miniature homepage for `associate_3` — presenting company/account/package info — filtered such that only material `user_9` has shared access to is visible… eg if `associate_3` had access to `company_32`, and `user_9` did not, then we would want to make sure that information for `company_9` remained protected at this route.
 
-When trying to devise a strategy to accomplish this, I realized that much of this challenge wasn't just in articulating the filtering mechanisms in the controller, but also in how the views would need to adjust to the different frames of reference given the amount of data they were responsible for retrieving and rendering.  My original attempt to solve this began with an elaborate, but still rather standard, setup of view files and partials that accepted locals defined by instance variables.  As the controller's filtering mechanisms began to output different instance variables based on different `params`**, I found it difficult to keep the partials and the ERB in the view files very DRY, and instead found abstracting out the variables in the controller and processing them entirely in a framework of helper methods as an easier path to pursue.
+When trying to devise a strategy to accomplish this, I realized that much of this challenge wasn't just in articulating the filtering mechanisms in the controller, but also in how the views would need to adjust to the different frames of reference given the amount of data they were responsible for retrieving and rendering.  My original attempt to solve this began with an elaborate, but still rather standard, setup of view files and partials that accepted locals defined by instance variables.  As the controller's filtering mechanisms began to output different instance variables based on different `params`, I found it difficult to keep the partials and the ERB in the view files very DRY, and instead found abstracting out the variables in the controller and processing them entirely in a framework of helper methods as an easier path to pursue.
 
 Although the app’s available routes changed by the time the app was completed, the approach of handling all the required filtering processes in the helper methods evolved to ultimately define the majority of the app’s HTML components.  As a result, view files are not used in this app.   Instead, two primary templates — one for displaying the logged-in content and one for signup/signin — are driven by a framework of helper methods that process a suite of abstracted instance variables from the controllers.
 
@@ -61,19 +61,20 @@ Instance variables are named to maintain consistency in the helper framework. Fo
 			@subject_collection_attribute = :status
 			3.times {@subject.package_comments.build}      
 		end
- .
- 
-		accounts#new
 
-		def new
-				@route_path = user_accounts_path(current_user.id)
-				@title = "Add New Account:"
-				@subject = Account.new
-				@subject.build_company
-				3.times {@subject.packages.build}
-				@child_class_attribute = Package.status
-				@child_collection_attribute = :status
-			end
+
+
+	accounts#new
+
+	def new
+			@route_path = user_accounts_path(current_user.id)
+			@title = "Add New Account:"
+			@subject = Account.new
+			@subject.build_company
+			3.times {@subject.packages.build}
+			@child_class_attribute = Package.status
+			@child_collection_attribute = :status
+		end
 
 
 These variables are used by the helper framework to ultimately populate the `form_structure` method.  This method builds out and renders the appropriate form based on the supplied variables.
@@ -165,5 +166,6 @@ Although this framework was not directly implemented in the user story conundrum
 The process of working through building off of a conventional Rails framework, and then finding ways to manipulate the framework to solve unforeseen complications in the app, was very rewarding.  Combining both Rails helpers and conventional ruby code in the framework helped to consolidate my understanding of both Ruby and Ruby on Rails.  I recommend considering this design approach to any student wishing to push themselves in their Ruby/Rails learning journey.
 
 
-** *A very real lesson I learned from attempting to build a data-rich dashboard app is how much the initial design blueprint matters.  Mapping out your nested routes—and fully understanding those routes implied data requirements—before starting to code the program is crucial.  You can get lost, as I did many times in the process of building this app, in myriad rabbit holes where you’re trying to shoehorn inappropriate data into inappropriate routes. 
+
+ *A very real lesson I learned from attempting to build a data-rich dashboard app is how much the initial design blueprint matters.  Mapping out your nested routes—and fully understanding those routes implied data requirements—before starting to code the program is crucial.  You can get lost, as I did many times in the process of building this app, in myriad rabbit holes where you’re trying to shoehorn inappropriate data into inappropriate routes. 
 *
