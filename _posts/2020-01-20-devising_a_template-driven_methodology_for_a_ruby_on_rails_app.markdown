@@ -167,5 +167,7 @@ The process of working through building off of a conventional Rails framework, a
 
 
 
+
+
  *A very real lesson I learned from attempting to build a data-rich dashboard app is how much the initial design blueprint matters.  Mapping out your nested routes—and fully understanding those routes implied data requirements—before starting to code the program is crucial.  You can get lost, as I did many times in the process of building this app, in myriad rabbit holes where you’re trying to shoehorn inappropriate data into inappropriate routes. 
 *
