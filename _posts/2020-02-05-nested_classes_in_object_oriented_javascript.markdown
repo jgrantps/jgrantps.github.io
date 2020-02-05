@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Nested Classes in Object Oriented Javascript"
-date:       2020-02-05 17:53:49 +0000
+date:       2020-02-05 12:53:50 -0500
 permalink:  nested_classes_in_object_oriented_javascript
 ---
 
