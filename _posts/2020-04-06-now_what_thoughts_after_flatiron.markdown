@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Now What? Thoughts After Flatiron."
-date:       2020-04-06 13:57:32 +0000
+date:       2020-04-06 09:57:33 -0400
 permalink:  now_what_thoughts_after_flatiron
 ---
 
